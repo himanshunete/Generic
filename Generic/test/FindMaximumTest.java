@@ -1,4 +1,5 @@
-package com.lambdaexpression;
+package com.javapractiseuc4;
+
 
 import org.junit.Test;
 import org.junit.Assert;
@@ -6,29 +7,29 @@ public class FindMaximumTest {
    
 	@Test
 	public void givenThreeIntegerNumber_ShouldReturnMaximumValue() {
-		Integer[] intNum = {1, 2, 6, 5, 3};
-		FindMaximum maxOperation = new FindMaximum(intNum);
+		Integer[] intNum = { 6, 2, 1, 11, 20 } ; 
+		FindMaximum maxOperation = new FindMaximum();
 		Integer maxInteger = maxOperation.findMax(intNum);
-		FindMaximum.printMax(maxInteger);
-		Assert.assertEquals( Integer.valueOf(6),  maxInteger);
+		maxOperation.printMax(maxInteger) ;
+		Assert.assertEquals( Integer.valueOf(20),  maxInteger);
 	}
 	
 	@Test
 	public void givenThreeFloatNumber_ShouldReturnMaximumValue() {
-		Double[] doubleNum = {1.2, 5.8, 3.5, 9.8, 2.4};
-		FindMaximum maxOperation = new FindMaximum(doubleNum);
+		Double[] doubleNum = { 6.1, 2.8, 4.6, 1.1, 9.8 } ; 
+		FindMaximum maxOperation = new FindMaximum();
 		Double maxDouble = maxOperation.findMax(doubleNum);
-		FindMaximum.printMax(maxDouble);
+		maxOperation.printMax(maxDouble) ;
 		Assert.assertEquals( Double.valueOf(9.8),  maxDouble);
 	}
 	
 	@Test
 	public void givenThreeStrings_ShouldReturnMaximumString() {
-		String[] string = {"Apple", "Peach", "Banana", "Orange", "WaterMelon"};
-		FindMaximum maxOperation = new FindMaximum(string);
+		String[] string = { " apple", " water ", " orange " } ; 
+		FindMaximum maxOperation = new FindMaximum();
 		String maxString = maxOperation.findMax(string);
-		FindMaximum.printMax(maxString);
-		Assert.assertEquals( "WaterMelon",  maxString);
+		maxOperation.printMax(maxString) ;
+		Assert.assertEquals( " water ",  maxString);
 	}
 	
 }

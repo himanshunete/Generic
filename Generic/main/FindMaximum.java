@@ -1,37 +1,31 @@
-package com.lambdaexpression;
+package com.javapractiseuc4;
 
-import java.util.Arrays;
-import java.util.Optional;
-public class FindMaximum<E extends Comparable<E> > {
-	E[] array ;
-   public  FindMaximum(E[] array ) {
-	   this.array = array;
-	   
-   }
-   public void findMax() {
-	   findMax();
-	   
-   }
-   
-    public static <E extends Comparable<E> >  E findMax( E[] array) {	  
-	   Arrays.sort(array) ;
-	   E max = array[0];
-	   if (array[1].compareTo(max) > 0) {
-		   max = array[1];
-	   }
-	   if (array[2].compareTo(max) > 0) {
-		   max = array[2];
-	   }	
-	   if (array[3].compareTo(max) > 0) {
-		   max = array[3];
-	   }
-	   if (array[4].compareTo(max) > 0) {
-		   max = array[4];
-	   }
-	   return max;
-   }
-   public static <E> E printMax(E max) {
+
+public class FindMaximum {
+	
+
+    public  <E extends Comparable<E>> E findMax( E ... intNum ) {
+    	for ( int i = 0; i < intNum.length; i ++ ) {
+    		System.out.println(intNum[i]);
+	    }
+	    E temp;	   
+	    for (int i =0 ; i<(intNum.length - 1 ); i ++) {
+		    for ( int j = 0; j<(intNum.length - 1); j++) {
+		    	if ( intNum[j].compareTo(intNum[j + 1]) < 0 ) {
+				   temp = intNum[j] ;
+				   intNum[j] = intNum[j + 1] ;
+				   intNum[j+1] = temp ;				   
+			    }
+		    }
+	    }
+	    E max = intNum[0];
+	    return max;
+      
+	  
+    }    
+    public static <E> E printMax(E max) {
 		System.out.println("Maximum Value is:" + max) ;
 		return max;
-   }
+    }
+   
 }
